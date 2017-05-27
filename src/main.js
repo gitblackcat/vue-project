@@ -14,23 +14,11 @@ const router = new VueRouter({
 
 import Loading from './components/loading'
 Vue.use(Loading)
-import axios from './axiosConfig.js'
-// import axios from 'axios'
-// axios.interceptors.request.use(function (config) { //配置发送请求的信息
-//     stores.dispatch('showLoading')
-//     return config
-// }, function (error) {
-//     return Promise.reject(error)
-// })
+import {
+    instance
+} from './axiosConfig.js'
 
-// axios.interceptors.response.use(function (response) { //配置请求回来的信息
-//     stores.dispatch('hideLoading')
-//     return response
-// }, function (error) {
-//     return Promise.reject(error)
-// })
-
-Vue.prototype.$http = axios
+Vue.prototype.$http = instance
 
 import Vuex from 'vuex'
 import stores from './stores/store'
